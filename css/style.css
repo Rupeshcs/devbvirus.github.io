@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600&display=swap');
+
+*{
+   font-family: 'Montserrat', sans-serif;
+   margin:0; padding:0;
+   box-sizing: border-box;
+   outline: none; border:none;
+   text-decoration: none;
+   text-transform: capitalize;
+   transition: all .2s linear;
+}
+
+body{
+ background-color: #dc143c22; 
+}
+
+.container{
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  padding:25px 20px;
+}
+
+.container .heading{
+  font-size: 40px;
+  margin-bottom: 20px;
+  color:#000;
+  font-weight: 300;
+  text-align: left;
+}
+
+.container .box-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap:20px;
+}
+
+.container .box-container .box{
+  /* background-color: #fff;
+  padding: 0px 0px 20px 0px;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0,0,0,.2); */
+  display: none;
+}
+
+.container .box-container .box:nth-child(1),
+.container .box-container .box:nth-child(2),
+.container .box-container .box:nth-child(3),
+.container .box-container .box:nth-child(4){
+  display: inline-block;
+}
+
+.container .box-container .box .image{
+  margin-bottom: 0px;
+  overflow: hidden;
+  height: 550px;
+  border-radius: 0px;
+}
+
+.container .box-container .box .image img{
+  height: 100%;
+  width: 100%;
+  /* object-fit: cover; */
+}
+.content {
+  display: block;
+  padding: 30px 15px;
+  position: absolute;
+  text-align: left;
+  width:275px;
+  background: #046cf466;
+  transform: translateY(-200px);
+}
+.container .box-container .box:hover .image img{
+  transform: scale(1.1);
+}
+
+.container .box-container .box .content h3{
+  font-size: 20px;
+  color:#334;
+}
+
+.container .box-container .box .content p{
+  font-size: 15px;
+  color:#fff;
+  line-height: 2;
+  padding:0;
+}
+
+.container .box-container .box .content .btn{
+  display: inline-block;
+  padding:10px 0px;
+  
+  color:green;
+  font-size: 30px;
+}
+
+.container .box-container .box .content .btn:hover{
+  color:#fff;
+}
+
+.container .box-container .box .content .icons{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top:1px solid #334;
+}
+
+.container .box-container .box .content .icons span{
+  font-size: 14px;
+  color:#777;
+}
+
+.container .box-container .box .content .icons span i{
+  color:crimson;
+  padding-right: 5px;
+}
+
+#load-more{
+  margin-top: 20px;
+  display: inline-block;
+  padding:13px 30px;
+  border:1px solid #334;
+  color:#334;
+  font-size: 16px;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+#load-more:hover{
+  background-color: crimson;
+  border-color: crimson;
+  color:#fff;
+}
+#modal-toggle{
+  display: none;
+}
+
+.content .modal-content,
+.content .modal-backdrop{
+  height: 0;
+  width: 0;
+  opacity: 0;
+  visibility: hidden;
+  cursor: pointer;
+  transition: opacity 0.2s ease-in;
+
+}
+.content #modal-toggle:checked ~ .modal-backdrop{
+  background-color: rgba(0,0,0,0.6);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  left:0;
+  top:0;
+  z-index: 10;
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.2s ease-in;
+}
+.content #modal-toggle:checked ~ .modal-content{
+background: #fff;
+width: 400px;
+height: 300px;
+padding:10px 30px;
+border-radius: 4px;
+position: fixed;
+top:0%;
+left:calc(100% - 0px);
+z-index: 9000;
+cursor: auto;
+visibility: visible;
+opacity: 1;
+box-shadow: 0 3px 7px rgba(0,0,0,0.6);
+}
+@media (max-width:1191px){
+  .content {
+    
+    width: 449px;
+   
+}}
+@media (max-width:450px){
+  .content {
+    display: block;
+    padding: 30px 15px;
+    position: absolute;
+    text-align: left;
+    width: 449px;
+    background: #046cf466;
+    margin-top: -170px;
+}
+  .container .heading{
+    font-size: 25px;
+  }
+
+  .container .box-container{
+    grid-template-columns: 1fr;
+  }
+
+  .container .box-container .box .image{
+    height: 200px;
+  }
+
+  .container .box-container .box .content p{
+    font-size: 12px;
+  }
+
+  .container .box-container .box .content .icons span{
+    font-size: 12px;
+  }
+
+}
